@@ -48,6 +48,19 @@ public class PessoasService {
 		return ResponseEntity.ok(pessoa);
 	}
 	
+	@GetMapping("/cpf/{cpf}")
+	public ResponseEntity<Pessoa> findByCpf(@PathVariable String cpf) {
+		Pessoa pessoa = pessoas.findByCpf(cpf);
+		
+		if (pessoa == null) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		return ResponseEntity.ok(pessoa);
+	}
+	
+	
+	
 	@PutMapping("/{id}")
 	@RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, 

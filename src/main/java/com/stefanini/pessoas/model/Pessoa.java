@@ -30,13 +30,13 @@ public class Pessoa {
 	private String nacionalidade;
 	private String naturalidade;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	
 	private Date datacadastro;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	
 	private Date dataatualizacao;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	
 	private Date datanascimento;
 	
 	public long getId() {
