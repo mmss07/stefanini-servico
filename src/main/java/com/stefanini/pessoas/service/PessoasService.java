@@ -59,6 +59,18 @@ public class PessoasService {
 		return ResponseEntity.ok(pessoa);
 	}
 	
+	@GetMapping("/nextId")
+	public ResponseEntity<Pessoa> nextId(@PathVariable String cpf) {
+		Long id = pessoas.nextId();
+		Pessoa pessoa = new Pessoa();
+		pessoa.setId(id);
+		if (id == null) {
+			return ResponseEntity.notFound().build();
+		}
+		
+		return ResponseEntity.ok(pessoa);
+	}
+	
 	
 	
 	@PutMapping("/{id}")
