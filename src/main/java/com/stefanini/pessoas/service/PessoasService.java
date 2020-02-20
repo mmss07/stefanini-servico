@@ -82,10 +82,8 @@ public class PessoasService {
 	
 	
 	
-	@PutMapping("/{id}")
-	@RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, 
-			@Valid @RequestBody Pessoa pessoa) {
+	@PutMapping("/{id}")	
+	public ResponseEntity<Pessoa> atualizar(@PathVariable Long id, @Valid @RequestBody Pessoa pessoa) {
 		Pessoa existente = pessoas.findOne(id);
 		
 		if (existente == null) {
