@@ -3,8 +3,6 @@ package com.stefanini.pessoas.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
@@ -16,8 +14,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Pessoa {
 
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id	
 	private Long id;
 	
 	@NotBlank
@@ -35,10 +32,10 @@ public class Pessoa {
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date datacadastro;
+	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dataatualizacao;
 	
-	@NotNull
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date datanascimento;
 	

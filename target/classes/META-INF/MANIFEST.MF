@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: ServicoPessoa
 Implementation-Version: 0.0.1-V
-Built-By: marcelo.mauricio
+Built-By: Raquel Ferraz
 Implementation-Vendor-Id: com.stefanini
-Build-Jdk: 1.8.0_221
+Build-Jdk: 1.8.0_181
 Implementation-URL: http://projects.spring.io/spring-boot/ServicoPesso
  a/
 Created-By: Maven Integration for Eclipse
