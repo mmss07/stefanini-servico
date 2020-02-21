@@ -1,12 +1,12 @@
 package com.stefanini.pessoas.service;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stefanini.pessoas.model.Pessoa;
@@ -68,12 +67,19 @@ public class PessoasService {
 		return ResponseEntity.ok(pessoa);
 	}
 	
+	
+	
 	@GetMapping("/nextId")
-	public ResponseEntity<Pessoa> nextId(@PathVariable String cpf) {
-		Long id = pessoas.nextId();
+	public ResponseEntity<Pessoa> nextId() {
 		Pessoa pessoa = new Pessoa();
-		pessoa.setId(id);
-		if (id == null) {
+		Long contador = new Long(0);
+		List<Pessoa> findAll = pessoas.findAll();
+		for (Iterator iterator = findAll.iterator(); iterator.hasNext();) {			
+			contador++;			
+			iterator.next();
+		}
+		pessoa.setId(contador+1);
+		if (contador == 0) {
 			return ResponseEntity.notFound().build();
 		}
 		
