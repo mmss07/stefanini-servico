@@ -11,10 +11,8 @@ Serviço REST = stefanini-servico
 https://github.com/mmss07/stefanini-servico.git
 O serviço esta hospedado em:
 https://dashboard.heroku.com/apps/mmss20200712
-Para entra é só acessar:
-https://id.heroku.com/login
-marcelomauricio@hotmail.com	
-@Mariza07 
+
+
 
 
 ==================================================================================
